@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: crud-cm
+data:
+  PG_HOST: "my-release-postgresql-hl"
+  PG_DB_NAME: "postgres"

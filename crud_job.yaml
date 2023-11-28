@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: crud-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: pg-guardian
+        image: energy1971/pg_guardian
+        envFrom:
+        - secretRef:
+             name: crud-secret
+        - configMapRef:
+             name: crud-cm
+      restartPolicy: OnFailure
